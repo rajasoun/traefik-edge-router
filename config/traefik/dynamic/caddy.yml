@@ -4,7 +4,7 @@ http:
       entryPoints: 
         - https
       tls: {}
-      rule: 'Host(`htd-bizapps-monitor.cisco.com`)'
+      rule: 'Host(`htd-bizapps-monitor.cisco.com`) && PathPrefix(`/caddy`)'
       service: caddy
 
   services:

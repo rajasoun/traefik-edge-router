@@ -21,11 +21,11 @@ export TRAEFIK_DOMAIN=htd-bizapps-monitor
 
 IP="$(get_local_ip)"
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-COMPOSE_FILES=$(construct_compose_files "lb/lb.list")
+COMPOSE_FILES=$(construct_compose_files "compose.list")
 echo "docker-compose $COMPOSE_FILES"
 
 SERVICES=(htd-bizapps-monitor)
-API_ENDPOINTS=(dashboard/ metrics health)
+API_ENDPOINTS=(dashboard/ metrics health analytics)
 
 export IP
 export BASE_DIR
