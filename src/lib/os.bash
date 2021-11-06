@@ -27,8 +27,10 @@ function construct_compose_files(){
   while IFS= read -r line
   do
     # display $line or do somthing with $line
-    LINE=" -f $line"
-    COMPOSE_FILES=$COMPOSE_FILES$LINE
+    if [ ! -z $line ];then
+      LINE=" -f $line"
+      COMPOSE_FILES=$COMPOSE_FILES$LINE
+    fi
   done <"$COMPOSE_FILE_LIST"
   echo $COMPOSE_FILES
 }
