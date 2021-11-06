@@ -17,7 +17,7 @@
       register: register_name
 
   tasks:
-      - name: Git checkout
+    - name: Git checkout
       ansible.builtin.git:
         repo: "https://github.com/rajasoun/traefik-load-balancer"
         dest: traefik-load-balancer
