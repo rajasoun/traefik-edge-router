@@ -1,0 +1,14 @@
+http:
+  routers:
+    plausible:
+      entryPoints: 
+        - https
+      tls: {}
+      rule: 'Host(`htd-bizapps-monitor.cisco.com`) && PathPrefix(`/analytics`))'
+      service: plausible
+
+  services:
+    plausible:
+      loadBalancer:
+        servers:
+          - url: http://plausible:8000
