@@ -10,19 +10,5 @@
     docker_compose_version: "1.29.2"
     docker_users: [ "ubuntu" ]
 
-  pre_tasks:
-    - name: Check traefik-load-balancer Dir
-      stat:
-        path: "/home/ubuntu/traefik-load-balancer"
-      register: register_name
-
-  tasks:
-    - name: Git checkout
-      ansible.builtin.git:
-        repo: "https://github.com/rajasoun/traefik-load-balancer"
-        dest: /home/ubuntu/traefik-load-balancer
-        update: yes
-      when: not register_name.stat.exists
-
   roles:
     - geerlingguy.docker

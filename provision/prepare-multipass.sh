@@ -14,4 +14,5 @@ multipass exec $VM_NAME -- sudo apt-get install ansible -y
 multipass exec $VM_NAME -- ansible-galaxy install geerlingguy.docker
 multipass exec $VM_NAME -- wget ${PLAYBOOK} -P  /tmp
 multipass exec $VM_NAME -- ansible-playbook /tmp/docker.yml
+multipass exec $VM_NAME -- git clone https://github.com/rajasoun/traefik-load-balancer
 multipass shell $VM_NAME
