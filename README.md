@@ -17,8 +17,10 @@ Traefik Edge Router and Load Balancer
 
 4. Start the Servies
 ```
-$ ./assist.bash router up
-$ ./assist.bash router status
+$ ./lb.bash router up
+$ ./lb.bash router status
+$ ./app.bash router up
+$ ./app.bash router status
 ```
 
 5. Teardown
