@@ -20,7 +20,7 @@
     - name: Git checkout
       ansible.builtin.git:
         repo: "https://github.com/rajasoun/traefik-load-balancer"
-        dest: traefik-load-balancer
+        dest: /home/ubuntu/traefik-load-balancer
         update: yes
       when: not register_name.stat.exists
 
