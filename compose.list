@@ -1,4 +1,4 @@
-lb/traefij.yml
+lb/traefik.yml
 lb/caddy.yml
 apps/plausible.yml
 
