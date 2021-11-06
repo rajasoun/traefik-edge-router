@@ -1,6 +1,5 @@
 ---
 
-
 - hosts: localhost
   become: true
   become_method: sudo
@@ -12,7 +11,7 @@
     docker_users: [ "ubuntu" ]
 
   pre_tasks:
-    - name: Check ansible-control-center Dir
+    - name: Check traefik-load-balancer Dir
       stat:
         path: "/home/ubuntu/traefik-load-balancer"
       register: register_name
