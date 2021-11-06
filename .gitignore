@@ -3,3 +3,4 @@ certs/*.csr
 certs/*.key
 .DS_Store
 domains.txt
+conf.env
