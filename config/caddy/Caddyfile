@@ -1,0 +1,19 @@
+:80 {
+    # Enable static file server 
+    handle_path / {
+		root * /var/www/html
+		file_server
+        file_server
+        templates
+        encode gzip
+        try_files {path}.html {path}
+	} 
+
+	handle /health {
+		respond "Ok" 200
+	}
+
+}
+
+
+

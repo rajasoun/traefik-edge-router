@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    volumes:
+      - $BASE_DIR/config/caddy:/etc/caddy:ro
+      - $BASE_DIR/certs:/etc/certs/ssl:ro
+      - $BASE_DIR/static:/var/www/html:ro
+    restart: unless-stopped
+    networks:
+      - traefik
+   
+networks:
+  traefik:  

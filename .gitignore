@@ -1,0 +1,5 @@
+certs/*.crt
+certs/*.csr
+certs/*.key
+.DS_Store
+domains.txt

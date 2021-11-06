@@ -1,0 +1,14 @@
+http:
+  routers:
+    caddy:
+      entryPoints: 
+        - https
+      tls: {}
+      rule: 'Host(`htd-bizapps-monitor.cisco.com`)'
+      service: caddy
+
+  services:
+    caddy:
+      loadBalancer:
+        servers:
+          - url: http://caddy

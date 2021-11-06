@@ -1,0 +1,15 @@
+http:
+  routers:
+    traefik-api:
+      entryPoints: 
+        - https
+      tls: {}
+      rule: '(Host(`htd-bizapps-monitor.cisco.com`) && (PathPrefix(`/api/`) || PathPrefix(`/dashboard/`)))'
+      service: api@internal
+
+    metrics:
+      entryPoints: 
+        - https
+      tls: {}
+      rule: '(Host(`htd-bizapps-monitor.cisco.com`) && PathPrefix(`/metrics`))'
+      service: prometheus@internal

@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  traefik:
+    image: traefik:latest
+    container_name: traefik
+    ports:
+      - "0.0.0.0:80:80"
+      - "0.0.0.0:443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - $BASE_DIR/config/traefik:/etc/traefik
+      - $BASE_DIR/certs:/certs:ro
+    networks:
+      - traefik
+   
+networks:
+  traefik:
