@@ -29,7 +29,6 @@ export API_ENDPOINTS
 opt="$1"
 choice=$( tr '[:upper:]' '[:lower:]' <<<"$opt" )
 case $choice in
-  case $action in
   up)
     echo "Spinning up Docker Images..."
     echo "If this is your first time starting sandbox this might take a minute..."
