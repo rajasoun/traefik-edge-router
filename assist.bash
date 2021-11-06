@@ -8,7 +8,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/src/load.bash"
 
 function help(){
-    echo "Usage: $0  {mock|docker}" >&2
+    echo "Usage: $0  {router|docker}" >&2
     echo
     echo "   router             Manage Mock Service Sandbox"
     echo "   docker             House Keep Docker"
