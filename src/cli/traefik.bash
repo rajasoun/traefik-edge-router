@@ -47,6 +47,7 @@ function traefik() {
     ;;
   down)
     echo "Stopping sandbox containers..."
+    echo "This Will Make All Apps Containers - In Accesible"
     eval docker-compose   "${COMPOSE_FILES}" down -v  --remove-orphans
     remove_host_entries
     docker container prune -f
