@@ -39,7 +39,7 @@ services:
       - plausible_db
       - plausible_events_db
       - mail
-    ports:
+    expose:
       - 8000
     env_file:
       - $BASE_DIR/config/plausible/conf.env

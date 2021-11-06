@@ -4,7 +4,7 @@ http:
       entryPoints: 
         - https
       tls: {}
-      rule: '(Host(`htd-bizapps-monitor.cisco.com`) && PathPrefix(`/analytics`))'
+      rule: 'Host(`htd-bizapps-monitor.cisco.com`)'
       service: plausible
 
   services:
