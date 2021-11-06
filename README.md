@@ -20,3 +20,9 @@ Traefik Edge Router and Load Balancer
 $ ./assist.bash router up
 $ ./assist.bash router status
 ```
+
+5. Teardown
+
+```
+./multipass/clean-multipass.sh
+```
