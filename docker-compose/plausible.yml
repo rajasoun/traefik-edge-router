@@ -35,7 +35,7 @@ services:
     ports:
       - 8000:8000
     env_file:
-      - $BASE_DIR/config/conf.env
+      - $BASE_DIR/config/plausible/conf.env
 
 volumes:
   db-data:
