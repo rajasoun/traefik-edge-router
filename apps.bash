@@ -16,7 +16,7 @@ COMPOSE_FILES=$(construct_compose_files "apps/apps.list")
 echo "docker-compose $COMPOSE_FILES"
 
 SERVICES=(htd-bizapps-monitor)
-API_ENDPOINTS=(dashboard/ metrics health)
+API_ENDPOINTS=(analytics)
 
 export IP
 export BASE_DIR
