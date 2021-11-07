@@ -25,7 +25,7 @@ BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 COMPOSE_FILES=$(construct_compose_files "compose.list")
 
 SERVICES=(htd-bizapps-monitor)
-API_ENDPOINTS=(dashboard/ web web/health metrics)
+API_ENDPOINTS=(dashboard/ web web/health  metrics)
 
 export IP
 export BASE_DIR

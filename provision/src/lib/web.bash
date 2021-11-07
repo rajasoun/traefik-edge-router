@@ -8,6 +8,7 @@ function display_url_status(){
     case $HTTP_STATUS in
       200)  echo "https://${HOST}  ✅" ;;
       502)  echo "https://${HOST}  🔴" ;;
+      404)  echo "https://${HOST}  🔴" ;;
     esac
 }
 
