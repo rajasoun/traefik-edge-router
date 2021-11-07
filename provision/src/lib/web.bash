@@ -6,14 +6,16 @@ function display_url_status(){
     # shellcheck disable=SC1083
     HTTP_STATUS="$(curl -s --max-time "${max_secs_run}" -o /dev/null -L -w ''%{http_code}'' "https://${HOST}")"
     case $HTTP_STATUS in
-      200)  echo "https://${HOST}  -> Up" ;;
-      502)  echo "https://${HOST}  -> Down" ;;
+      200)  echo "https://${HOST}  ✅" ;;
+      502)  echo "https://${HOST}  🔴" ;;
     esac
 }
 
 
 function display_app_status(){
     echo "Status"
+    echo "======"
+    echo ""
     execute_action "display_url_status"
 }
 
