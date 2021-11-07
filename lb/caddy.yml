@@ -10,8 +10,6 @@ services:
     restart: unless-stopped
     networks:
       - traefik
-    labels:
-      - traefik.enable=true
    
 networks:
   traefik:  
