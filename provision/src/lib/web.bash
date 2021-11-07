@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 
 function display_url_status(){
+    local max_secs_run="2"
     HOST="$1"
     # shellcheck disable=SC1083
-    HTTP_STATUS="$(curl -s -o /dev/null -L -w ''%{http_code}'' "https://${HOST}")"
-    if [[ "${HTTP_STATUS}" != "200" ]] ; then
-        echo "https://${HOST}  -> Down"
-    else
-        echo "https://${HOST}  -> Up"
-    fi
+    HTTP_STATUS="$(curl -s --max-time "${max_secs_run}" -o /dev/null -L -w ''%{http_code}'' "https://${HOST}")"
+    case $choice in
+      200)  echo "https://${HOST}  -> Up" ;;
+        *)  echo "https://${HOST}  -> Down" ;;
+    esac
 }
 
 
 function display_app_status(){
-    echo "Status"
+    echo ""
     execute_action "display_url_status"
 }
 
