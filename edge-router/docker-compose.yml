@@ -8,5 +8,5 @@ services:
       - "0.0.0.0:443:443"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - $BASE_DIR/edge-router/config/traefik:/etc/traefik
+      - $BASE_DIR/edge-router/config:/etc/traefik
       - $BASE_DIR/certs:/certs:ro
