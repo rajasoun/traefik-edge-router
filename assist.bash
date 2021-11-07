@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=src/load.bash
-source "$SCRIPT_DIR/src/load.bash"
+source "$SCRIPT_DIR/provision/src/load.bash"
 
 function help(){
     echo "Usage: $0  {router|docker}" >&2
@@ -22,10 +22,11 @@ export TRAEFIK_DOMAIN=htd-bizapps-monitor
 IP="$(get_local_ip)"
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 COMPOSE_FILES=$(construct_compose_files "compose.list")
+
 echo "docker-compose $COMPOSE_FILES"
 
 SERVICES=(htd-bizapps-monitor)
-API_ENDPOINTS=(dashboard/ metrics web web/health analytics)
+API_ENDPOINTS=(dashboard/ metrics web web/health)
 
 export IP
 export BASE_DIR

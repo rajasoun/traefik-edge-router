@@ -1,4 +1,4 @@
-lb/traefik.yml
-lb/caddy.yml
-apps/plausible.yml
+edge-router/docker-compose.yml
+apps/caddy/docker-compose.yml
+apps/plausible/docker-compose.yml
 

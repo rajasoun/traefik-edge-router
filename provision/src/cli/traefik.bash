@@ -50,9 +50,9 @@ function traefik() {
     ;;
   status)
     echo "Querying sandbox containers status..."
+    eval docker-compose "${COMPOSE_FILES}"  ps
     display_app_status
     display_api_status
-    eval docker-compose "${COMPOSE_FILES}"  ps
     ;;
   enter)
     enter "$@"
