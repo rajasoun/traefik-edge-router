@@ -12,6 +12,7 @@ function help(){
     echo
     echo "   router             Manage Mock Service Sandbox"
     echo "   docker             House Keep Docker"
+    echo "   debug              Display docker-compose command"
     echo
     return 1
 }
@@ -22,8 +23,6 @@ export TRAEFIK_DOMAIN=htd-bizapps-monitor
 IP="$(get_local_ip)"
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 COMPOSE_FILES=$(construct_compose_files "compose.list")
-
-echo "docker-compose $COMPOSE_FILES"
 
 SERVICES=(htd-bizapps-monitor)
 API_ENDPOINTS=(dashboard/ metrics web web/health)
@@ -44,6 +43,10 @@ case $choice in
       check_preconditions
       _docker "$@"
       ;;
+    debug)
+      echo "export BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)""
+      echo "docker-compose $COMPOSE_FILES"
+    ;;
     *)  help ;;
 esac
 
