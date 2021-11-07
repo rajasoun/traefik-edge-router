@@ -15,7 +15,6 @@ function display_url_status(){
 function display_app_status(){
     echo "Status"
     echo "======"
-    echo ""
     execute_action "display_url_status"
 }
 
