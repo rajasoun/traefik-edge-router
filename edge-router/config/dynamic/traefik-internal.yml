@@ -11,5 +11,5 @@ http:
       entryPoints: 
         - https
       tls: {}
-      rule: '(Host(`htd-bizapps-monitor.cisco.com`) && PathPrefix(`/metrics`))'
+      rule: 'Host(`htd-bizapps-monitor.cisco.com`) && PathPrefix(`/metrics`)'
       service: prometheus@internal
