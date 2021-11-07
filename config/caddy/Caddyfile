@@ -1,5 +1,4 @@
-:443 {
-    tls /etc/certs/ssl/ssl_certificate_key.key /etc/certs/ssl/ssl_certificate.crt
+:80 {
     # Enable static file server 
     handle_path / {
 		root * /var/www/html
