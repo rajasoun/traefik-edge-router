@@ -4,7 +4,7 @@ http:
       entryPoints: 
         - https
       tls: {}
-      rule: 'Host(`htd-bizapps-monitor.cisco.com`) && PathPrefix(`/caddy`)'
+      rule: 'Host(`htd-bizapps-monitor.cisco.com`) && PathPrefix(`/web`)'
       service: caddy
       middlewares: caddy-stripPrefix
 
@@ -19,4 +19,4 @@ http:
       stripPrefix:
         forceSlash: false
         prefixes:
-          - "/caddy"
+          - "/web"
