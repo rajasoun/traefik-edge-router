@@ -8,3 +8,12 @@ services:
       - $BASE_DIR/apps/caddy/static:/var/www/html:ro
       - $BASE_DIR/certs:/etc/certs/ssl:ro
     restart: unless-stopped
+    labels:
+        traefik.enable: true
+        traefik.http.routers.caddy.rule: "Host(`htd-bizapps-monitor.cisco.com`) && PathPrefix(`/web`)"
+        traefik.http.routers.caddy.entrypoints: "https"
+        traefik.http.routers.caddy.tls: true
+        traefik.http.routers.caddy.service: "caddy"
+        traefik.http.services.caddy.loadbalancer.server.port: 80
+        traefik.http.routers.caddy.middlewares: web-strip
+        traefik.http.middlewares.caddy-strip.stripprefix.prefixes: "/web"
