@@ -18,20 +18,16 @@ function enter() {
 function logs() {
   container_name="$3"
   case $container_name in
-  traefik-fa)
-    echo "traefik-fa logs "
-    eval docker-compose  "-f $BASE_DIR/docker-compose/traefik-fa.yml " logs -f
-    ;;
   traefik)
     echo "traefik logs "
-    eval docker-compose  "-f $BASE_DIR/docker-compose/traefik.yml " logs -f
+    eval docker-compose  "${COMPOSE_FILES}" logs -f traefik
     ;;
   all)
     echo "Logs "
     eval docker-compose  "${COMPOSE_FILES}" logs -f
     ;;
   *)
-    echo "traefik logs (traefik | traefik-fa | all)"
+    echo "traefik logs (traefik | all)"
     ;;
   esac
 }
