@@ -6,9 +6,17 @@ http:
       tls: {}
       rule: 'Host(`htd-bizapps-monitor.cisco.com`)'
       service: plausible
+      # middlewares: plausible-stripPrefix
 
   services:
     plausible:
       loadBalancer:
         servers:
           - url: http://plausible:8000
+
+  # middlewares:
+  #   plausible-stripPrefix:
+  #     stripPrefix:
+  #       forceSlash: false
+  #       prefixes:
+  #         - "/analytics"
