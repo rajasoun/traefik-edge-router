@@ -6,6 +6,7 @@ http:
       tls: {}
       rule: 'Host(`htd-bizapps-monitor.cisco.com`) && PathPrefix(`/caddy`)'
       service: caddy
+      middlewares: caddy-stripPrefix
 
   services:
     caddy:
@@ -13,9 +14,9 @@ http:
         servers:
           - url: http://caddy
 
-  # middlewares:
-  #   caddy:
-  #     stripPrefix:
-  #       forceSlash: false
-  #       prefixes:
-  #         - "/caddy"
+  middlewares:
+    caddy-stripPrefix:
+      stripPrefix:
+        forceSlash: false
+        prefixes:
+          - "/caddy"
