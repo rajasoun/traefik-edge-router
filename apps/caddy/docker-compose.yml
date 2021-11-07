@@ -15,5 +15,5 @@ services:
         traefik.http.routers.caddy.tls: true
         traefik.http.routers.caddy.service: "caddy"
         traefik.http.services.caddy.loadbalancer.server.port: 80
-        traefik.http.routers.caddy.middlewares: web-strip
+        traefik.http.routers.caddy.middlewares: caddy-strip
         traefik.http.middlewares.caddy-strip.stripprefix.prefixes: "/web"
