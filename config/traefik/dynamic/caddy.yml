@@ -13,9 +13,9 @@ http:
         servers:
           - url: http://caddy
 
-  middlewares:
-    caddy:
-      stripPrefix:
-        forceSlash: false
-        prefixes:
-          - "/caddy"
+  # middlewares:
+  #   caddy:
+  #     stripPrefix:
+  #       forceSlash: false
+  #       prefixes:
+  #         - "/caddy"
